@@ -1,4 +1,4 @@
-# Compact Navigation
+# Toggle Navigation
 
 This is an example of a toggleable navigation for small screens.
 
