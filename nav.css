@@ -1,0 +1,119 @@
+
+
+  /* =Navigation
+  ----------------------------------------------- */
+  header .nav {
+    position: absolute;
+    right: 0;
+    top: 1.5em;
+    z-index: 3; /* Just above the page title on the articles page */
+    text-align: right;
+  }
+
+  @media (min-width: 60em) {
+    header .nav {
+      top: 2.2727272727em; /* 50px / 22px */
+    }
+  }
+
+  header .nav ul,
+  header .nav li {
+    /* @reset-list */
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+  }
+  header .nav ul {
+    margin: 0;
+    text-align: right;
+    max-width: none;
+  }
+  header .nav li + li {
+    margin-top: 0.375em;
+  }
+  header .nav li li a {
+    margin-right: 0.375em;
+  }
+
+  /* Toggle button */
+  header .nav button {
+    text-align: right;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-size: inherit;
+    line-height: inherit;
+
+    /* Hide the button by default */
+    display: none;
+  }
+
+  /* Reset */
+  header .nav button,
+  header .nav button:hover,
+  header .nav button:active,
+  header .nav button:focus {
+    background: transparent;
+  }
+
+  /* Make the pressable area larger when the button is hidden */
+  .hidden-nav header .nav button {
+    padding-left: 2em;
+    padding-bottom: 2em;
+  }
+
+  header .nav button span {
+    display: inline-block;
+    /*
+    background-color: black;
+    color: white;
+    */
+    padding: 0.25em 0.375em;
+    margin-bottom: 0.375em;
+    border-radius: 0;
+  }
+
+  @media (max-width: 30em) { /* @toggle-nav-screen-width */
+    /* If the toggle navigation on small screens is working… */
+    .scripted-nav header .nav {
+      top: 0;
+    }
+  }
+
+  header .nav .icon.show {
+    display: none;
+  }
+  header .nav .icon.hide {
+    display: inline;
+  }
+  .hidden-nav header .nav .icon.show {
+    display: inline;
+  }
+  .hidden-nav header .nav .icon.hide {
+    display: none;
+  }
+
+  @media (max-width: 30em) { /* @toggle-nav-screen-width */
+
+    /* Show the toggle button */
+    .scripted-nav header .nav button {
+      display: block;
+    }
+
+    /* Hide the navigation */
+    .hidden-nav header .nav ul {
+      display: none;
+    }
+
+    /* Gray out the page behind the navigation */
+    .scripted-nav:not(.hidden-nav) .nav-mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 2; /* Just below the navigation */
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+  }
+
